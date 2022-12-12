@@ -1,6 +1,6 @@
 # Quellen der Präsentation
 
-→ Die [Seminararbeit](arbeit/Aɴɢʀɪғғssᴢᴇɴᴀʀɪᴇɴ_ᴀᴜғ_ᴇᴛᴀʙʟɪᴇʀᴛᴇ_Nᴇᴛᴢᴡᴇʀᴋᴘʀᴏᴛᴏᴋᴏʟʟᴇ.ᴘᴅғ) an sich 
+→ Die [Seminararbeit](../arbeit/Aɴɢʀɪғғssᴢᴇɴᴀʀɪᴇɴ_ᴀᴜғ_ᴇᴛᴀʙʟɪᴇʀᴛᴇ_Nᴇᴛᴢᴡᴇʀᴋᴘʀᴏᴛᴏᴋᴏʟʟᴇ.ᴘᴅғ) an sich 
 
 *Das GitHub-logo kommt von GitHub selbst* :) 
 
@@ -19,3 +19,6 @@
 
 → [Auch Interessant: Google's Phishing Quiz](https://phishingquiz.withgoogle.com/)
 
+## Quellen des Handouts:
+
+→ [*root* auf macOS](https://support.apple.com/en-us/HT204012)  

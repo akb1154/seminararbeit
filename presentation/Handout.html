@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Handout.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="angriffsszenarien-auf-etablierte-netzwerkprotokolle">Angriffsszenarien auf etablierte Netzwerkprotokolle</h1>
+<h2 id="eternalblue-und-wannacry">EternalBlue und WannaCry</h2>
+<p><strong>EternalBlue</strong> ist eine Schachstelle in der Windows-Implementation des SMB-Protokolls,
+das zum <em>File-sharing</em> innerhalb eines Netzwerkes genuzt wird.
+Der SMB-Server läuft auf Windows mit System-rechten�, und ist daher ein gutes Ziel für Angreifer,
+die Zugriff auf einen Rechner erlangen wollen.</p>
+<p><strong>WannaCry</strong> ist ein sog. <em><strong>Ransomworm</strong></em>, der ältere Versionen von u.a. Windows 7, 8.1, 10 und Vista
+angegriffen hat. Er nutzt die EternalBlue-Schwachstelle, um ein System zu infizieren.<br>
+WannaCry wird als ein sog. <em>Ransomworm</em> (dt. <em>Lösegeld-Wurm</em>) bezeichnet, da er ein System hybrid verschlüsselt und
+sich selbstständig weiterverbreitet.</p>
+<p align=center>
+    → Das BSI, Verbraucherzentrum und Microsoft raten <b>gegen</b> die Zahlung!
+</p>
+<h2 id="openssl-und-heartbleed">OpenSSL und Heartbleed</h2>
+<img align=right src="https://upload.wikimedia.org/wikipedia/commons/1/11/Simplified_Heartbleed_explanation.svg" width=250 height=250>
+<p align=left>
+<b>OpenSSL</b> ist eine sehr weit verbreitete Bibliothek für <code>C/C++</code>, die es erleichtern soll,
+in Programmen <code>SSL bzw. TLS</code> zu nutzen, was man für <b>HTTPS</b> benötigt.
+Unter anderem nutzen <code><b>Apache HTTPD</b></code> und <code><b>NGINX</b></code>, zwei der am weitesten verbreiteten Engines, wenn das HTTPS-Modul aktiv ist, OpenSSL standardmäßig.
+</p>
+<p> </p>
+<p align=left>
+    Dem Server wird eine Zeichenkette <code>(im beispiel: "bird")</code> und <wbr> die dazugehörige länge <code>(im beispiel: 4)</code>, die der Server zurücksenden soll bzw. zurücksendet. <br>
+    Allerdings überschreibt die <b>angegebene Länge</b> die <b>eigentliche Länge</b> wenn sie nicht übereinstimmen <code>(im beispiel: "bird", eigentlich: 4, angegeben: 500)</code>
+</p>
+<p> </p>
+<div class="page" />
+<h2 id="pr%C3%A4vention">Prävention</h2>
+<div style="display: flex">
+        <details style="align: left; clear: both;" open>
+            <summary><h3 style="display: inline">Als End-Nutzer</h3></summary>
+            <ul style="list-style-type: none">
+                <li> → Installiere Apps nur aus vertrauenswürdigen Quellen <br> &nbsp; &nbsp; &nbsp; (z.B. aus vorinstallierten App-Stores)</li>
+                <li> → Halte deine Systeme immer möglichst auf dem neusten Stand</li>
+                <li> → Setze möglichst auf Open-Source-Software (="OSS"/"FOSS")<br> &nbsp; &nbsp; &nbsp; <i>aber</i>: <b>auch OSS kann gravierende Fehler haben!</b></li>
+            </ul>
+        </details>
+        <details style="align: right; clear: both; margin-left: 4px;" open>
+            <summary><h3 style="display: inline">Als Entwickler</h3></summary>
+            <ul style="list-style-type: none">
+                <li> → Nutze <b>Kommentare</b> und <b>Dokumentiere</b> deinen Code</li>
+                <li> → Halte dich an die <a href="https://www.oracle.com/java/technologies/javase/codeconventions-contents.html">Standards</a> der Programmiersprache</li>
+                <li> → Nutze Versions-kontrollsysteme (z.B. <b>Git</b>)</li>
+                <li> → Wenn dein Code Fehler hat nutze <a href="rubberduckdebuging.com">Rubber Duck Debugging</a></li>
+            </ul>
+        </details>
+</div>
+<hr>
+<blockquote>
+<p>Die Präsentation, das Handout selbst, die Seminararbeit und Quellen findest du unter: <img style="display: inline-block; vertical-align: bottom; margin-bottom: 3.5px;" height="16" src="https://github.githubassets.com/pinned-octocat.svg" width="16"/> <a href="https://github.com/akb1154/seminararbeit">github.com/akb1154/seminararbeit</a></p>
+</blockquote>
+<details open>
+<summary><h3 style="display: inline;">System-rechte</h3></summary>
+<p>
+    Zugriffsrechte mit denen das System selbst arbeitet. 
+    In Windows sind System-rechte höher gestellt als Administrator-rechte.   <br>
+    → Windows selbst kann <code>C:\Windows\System32</code> löschen, aber ein Administrator (bzw. normaler Nutzer) können dies Nicht.
+    <br><br>
+    Sie sind vergleichbar mit dem <code>root</code> - Nutzer auf <cite>macOS</cite> bzw. <cite>Linux<abbr title="Der root-Account ist im sog. Linux-Kernel, aber er durch das System vor dem Nutzer versteckt werden.">*</abbr></cite>
+</p>
+</details>
+
+</body>
+</html>
