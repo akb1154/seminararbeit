@@ -6,12 +6,12 @@
 
 ## *Kapitel 2: OpenSSL*
 
-→ Der [Wikipedia Eintrag](https://en.wikipedia.org/wiki/OpenSSL) (engl.)
-→ [NGINX FAQ](https://nginx.org/en/docs/http/ngx_http_ssl_module.html) (engl.)
-→ [Apache HTTPD Documentation](https://httpd.apache.org/docs/2.4/ssl/) (engl.)
+→ Der [Wikipedia Eintrag](https://en.wikipedia.org/wiki/OpenSSL) (engl.)  
+→ [NGINX FAQ](https://nginx.org/en/docs/http/ngx_http_ssl_module.html) (engl.)  
+→ [Apache HTTPD Documentation](https://httpd.apache.org/docs/2.4/ssl/) (engl.)  
 
-[Bild: Wikipedia – Heartbleed (logo)](https://en.wikipedia.org/wiki/Heartbleed#/media/File:Heartbleed.svg)
-[Bild: Wikipedia – Heartbleed (beispiel)](https://en.wikipedia.org/wiki/Heartbleed#/media/File:Simplified_Heartbleed_explanation.svg)
+[Bild: Wikipedia – Heartbleed (logo)](https://en.wikipedia.org/wiki/Heartbleed#/media/File:Heartbleed.svg)  
+[Bild: Wikipedia – Heartbleed (beispiel)](https://en.wikipedia.org/wiki/Heartbleed#/media/File:Simplified_Heartbleed_explanation.svg)  
 
 ## *Kapitel 3.1: Prävention — End-Nutzer
 
