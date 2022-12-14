@@ -4,7 +4,7 @@
 
 **EternalBlue** ist eine Schachstelle in der Windows-Implementation des SMB-Protokolls, 
 das zum *File-sharing* innerhalb eines Netzwerkes genuzt wird.
-Der SMB-Server läuft auf Windows mit System-rechten, und ist daher ein gutes Ziel für Angreifer,
+Der SMB-Server läuft auf Windows mit System-Rechten, und ist daher ein gutes Ziel für Angreifer,
 die Zugriff auf einen Rechner erlangen wollen.
 
 **WannaCry** ist ein sog. ***Ransomworm***, der ältere Versionen von u.a. Windows 7, 8.1, 10 und Vista
@@ -64,7 +64,7 @@ Unter anderem nutzen <code><b>Apache HTTPD</b></code> und <code><b>NGINX</b></co
 > Die Präsentation, das Handout selbst, die Seminararbeit und Quellen findest du unter: <img style="display: inline-block; vertical-align: bottom; margin-bottom: 3.5px;" height="16" src="https://github.githubassets.com/pinned-octocat.svg" width="16"/> [github.com/akb1154/seminararbeit](https://github.com/akb1154/seminararbeit)
 
 <details open>
-<summary><h3 style="display: inline;">System-rechte</h3></summary>
+<summary><h3 style="display: inline;">System-Rechte</h3></summary>
 <p>
     Zugriffsrechte mit denen das System selbst arbeitet. 
     In Windows sind System-rechte höher gestellt als Administrator-rechte.   <br>
